@@ -110,12 +110,12 @@ var questionsAndAnswers = [{
     answers: ["Incorrect 1", "Incorrect 2", "Incorrect 3", "Correct Answer"]
 },
 {
-    question: "Question 21?",
+    question: "Question 22?",
     correctAnswer: "Correct Answer",
     answers: ["Incorrect 1", "Incorrect 2", "Incorrect 3", "Correct Answer"]
 },
 {
-    question: "Question 22?",
+    question: "Question 23?",
     correctAnswer: "Correct Answer",
     answers: ["Incorrect 1", "Incorrect 2", "Incorrect 3", "Correct Answer"]
 }]
@@ -130,12 +130,13 @@ console.log(displayArea);
 //select a random question - picking from array length, allowing for an assortment of questions
 for (let i = 0; i < numberOfQuestions; i++) {
     randomQuestion = Math.floor(Math.random() * (questionsAndAnswers.length));
-    questionsToAsk.push(questionsAndAnswers[randomQuestion]);
     
+    questionsToAsk.push(questionsAndAnswers[randomQuestion]);
+    questionsAndAnswers.splice(randomQuestion, 1);
 }
 
-console.log("Questions to ask")
-console.log(questionsToAsk);
+
+
 
 
 
