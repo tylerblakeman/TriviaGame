@@ -1,0 +1,11 @@
+.container {
+    max-width: 900px;
+    text-align: center;
+}
+
+.title {
+    padding: 20px;
+    margin: 0px 0px 5px 10px;
+    background-color: blue;
+    color: white;
+}
