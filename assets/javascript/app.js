@@ -37,11 +37,19 @@ var questionsAndAnswers = [{
     answers: ["Incorrect 1", "Incorrect 2", "Incorrect 3", "Correct Answer"]
 }]
 
-console.log(questionsAndAnswers[0]);
-console.log(questionsAndAnswers[1]);
-console.log(questionsAndAnswers[2]);
-console.log(questionsAndAnswers[3]);
-console.log(questionsAndAnswers[4]);
-console.log(questionsAndAnswers[5]);
-console.log(questionsAndAnswers[6]);
 
+//html variables
+var displayArea = document.getElementsByClassName("contentarea");
+
+console.log(displayArea);
+
+
+//select a random question
+var randomQuestion = Math.floor(Math.random() * 6);
+
+displayQuestion(randomQuestion);
+
+//writing questions to html
+function displayQuestion(x){
+    displayArea[0].innerHTML = questionsAndAnswers[x].question;
+}
