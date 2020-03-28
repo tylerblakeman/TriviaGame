@@ -1,0 +1,55 @@
+Pseudo Code
+
+    1. When user loads the page they are prompted with a start button to begin the game
+       
+    2. Once the user selects start they are prompted with a multiple choice question
+       
+    3. The user is provided 25 seconds to answer the question – if the user does not answer the question is marked incorrect.
+       	Countdown timer that can be interrupted by a button press
+       
+    4. If the user selects an answer within the correct amount of time they are prompted with the next question
+       
+    5. The user will be provided with 6 questions total
+       
+    6. At the end of the game the user will be provided a percentage correct (score)
+       
+    7. On the score screen the user will be asked if they would like to play again.
+
+
+
+FUNCTIONS NEEDED:
+
+Start Game Function
+
+Wipe Screen Function
+
+Display Question Function
+
+Select Random Questions Function – 6x
+
+End Game Function
+
+Display Score Function
+
+Restart Game Function
+
+
+VARIABLES NEEDED: 
+
+Array of questions – each question will have 3 incorrect answers and 1 correct answer
+
+Time variable – for the question display/timeout - allows the time to be changed later
+
+next question time – allows the time to be changed later
+
+
+
+
+
+UNIQUE PAGES TO DESIGN – these are not on separate pages but will display based on what step the user is on
+
+Intro page
+
+question page
+
+results page
