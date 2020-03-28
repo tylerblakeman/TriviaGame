@@ -25,7 +25,7 @@ Wipe Screen Function
 
 Display Question Function 
 
-Select Random Questions Function – 6x
+Select Random Questions Function – 6x 
 
 End Game Function
 
