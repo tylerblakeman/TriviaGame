@@ -1,12 +1,12 @@
 //global gameplay variables
-var questionTime = 10;
-var quizTime = 60000;
+var questionTime;
+var timerInterval;
 var numberOfQuestions = 6;
+var questionsRemaining;
 var randomQuestion;
 var questionsToAsk = [];
 var questionsRight = 0;
 var questionsWrong = 0;
-var timerInterval = setInterval(countdown, 1000);
 var questionsAndAnswers = [{
     question: "Question One?",
     correctAnswer: "Correct Answer",
@@ -135,10 +135,10 @@ var timeHtml = document.getElementById("timer")
 function randomQuestions(){
     for (let i = 0; i < numberOfQuestions; i++) {
     randomQuestion = Math.floor(Math.random() * (questionsAndAnswers.length));
-    
     questionsToAsk.push(questionsAndAnswers[randomQuestion]);
     questionsAndAnswers.splice(randomQuestion, 1);
-
+    //allows us to ask all of the questions 
+    questionsRemaining = numberOfQuestions;
 }
 }
 
@@ -149,27 +149,29 @@ startButton.onclick = function(){
     displayQuestion()
     numberOfQuestions--
     console.log(numberOfQuestions)
+    displayQuestion();
 }
-
-countdown();
-//countdown timer function
-function countdown() {
-    if (questionTime == 0) {
-      clearTimeout(timerInterval);
-      timeHtml.innerHTML = "time's up!";
-    } else {
-      timeHtml.innerHTML = questionTime + ' seconds';
-      questionTime--;
-    }
-  }
-
 
 //writing questions to html - currently testing that it can display for 6 seconds.
 function displayQuestion(){
-    displayArea.innerHTML = "blah blah blah blah blah blah";
-    setTimeout(function(){
-        displayArea.innerHTML = "";
-    }, questionTime);
+    displayArea.innerHTML = "blah blah blah blah blah blah";    
+}
 
+
+//countdown timer reset and call timer - pulled from https://github.com/tylerblakeman/Playing-With-Timers - my collaboration with Zach Hassler
+function timer(){
+    questionTime = 5;
+    timerInterval = setInterval(countdown, 1000)
+    countdown()
+    }
     
+//countdown timer function
+function countdown() {
+    if (questionTime == 0) {
+    clearInterval(timerInterval)
+    return console.log("time's up!...TYLER!");
+    } else {
+    console.log(questionTime)
+    questionTime--;
+    }
 }
