@@ -9,3 +9,14 @@
     background-color: blue;
     color: white;
 }
+#contentarea {
+    display: flex;
+    min-height: 500px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+#start {
+    justify-content: center;
+}

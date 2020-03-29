@@ -40,9 +40,6 @@ Array of questions – each question will have 3 incorrect answers and 1 correct
 
 Time variable – for the question display/timeout - allows the time to be changed later
 
-total play time - this will be shorter than max time for each question - meaning the game can time out before the user can answer all of the questions.
-
-
 
 
 UNIQUE PAGES TO DESIGN – these are not on separate pages but will display based on what step the user is on

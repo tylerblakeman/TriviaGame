@@ -1,9 +1,12 @@
 //global gameplay variables
-var questionTime;
-var quizTime;
+var questionTime = 10;
+var quizTime = 60000;
 var numberOfQuestions = 6;
 var randomQuestion;
 var questionsToAsk = [];
+var questionsRight = 0;
+var questionsWrong = 0;
+var timerInterval = setInterval(countdown, 1000);
 var questionsAndAnswers = [{
     question: "Question One?",
     correctAnswer: "Correct Answer",
@@ -118,33 +121,55 @@ var questionsAndAnswers = [{
     question: "Question 23?",
     correctAnswer: "Correct Answer",
     answers: ["Incorrect 1", "Incorrect 2", "Incorrect 3", "Correct Answer"]
-}]
+}];
 
 
 //html variables
-var displayArea = document.getElementsByClassName("contentarea");
+var displayArea = document.getElementById("contentarea");
+var startButton = document.getElementById("start");
+var timeHtml = document.getElementById("timer")
 
-console.log(displayArea);
 
-
+ 
 //select a random question - picking from array length, allowing for an assortment of questions
-for (let i = 0; i < numberOfQuestions; i++) {
+function randomQuestions(){
+    for (let i = 0; i < numberOfQuestions; i++) {
     randomQuestion = Math.floor(Math.random() * (questionsAndAnswers.length));
     
     questionsToAsk.push(questionsAndAnswers[randomQuestion]);
     questionsAndAnswers.splice(randomQuestion, 1);
+
+}
 }
 
+//start button click starts the game and calls for the first question - this is displayed at the start of the game and the end of the game
+startButton.onclick = function(){
+    randomQuestions();
+    displayArea.innerHTML = "";
+    displayQuestion()
+    numberOfQuestions--
+    console.log(numberOfQuestions)
+}
+
+countdown();
+//countdown timer function
+function countdown() {
+    if (questionTime == 0) {
+      clearTimeout(timerInterval);
+      timeHtml.innerHTML = "time's up!";
+    } else {
+      timeHtml.innerHTML = questionTime + ' seconds';
+      questionTime--;
+    }
+  }
 
 
+//writing questions to html - currently testing that it can display for 6 seconds.
+function displayQuestion(){
+    displayArea.innerHTML = "blah blah blah blah blah blah";
+    setTimeout(function(){
+        displayArea.innerHTML = "";
+    }, questionTime);
 
-
-
-
-
-displayQuestion(randomQuestion);
-
-//writing questions to html
-function displayQuestion(x){
-    displayArea[0].innerHTML = questionsAndAnswers[x].question;
+    
 }
