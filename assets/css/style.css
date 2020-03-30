@@ -20,3 +20,9 @@
 #start {
     justify-content: center;
 }
+
+#contentarea div {
+    font-weight: bold;
+    width: 100%;
+    margin: 20px;
+}
