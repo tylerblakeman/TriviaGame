@@ -1,7 +1,7 @@
 //global gameplay variables
 var questionTime;
 var timerInterval;
-var numberOfQuestions = 2;
+var numberOfQuestions = 6;
 var randomQuestion;
 var questionsToAsk = [];
 var questionsRight = 0;
@@ -121,7 +121,8 @@ var questionsAndAnswers = [{
     correctAnswer: "Correct Answer",
     answers: ["Incorrect 1", "Incorrect 2", "Incorrect 3", "Correct Answer"]
 }];
-
+var x;
+var userSelection;
 
 var questiondiv = `<div class = "question">`;
 var closediv = "<\div>";
@@ -133,7 +134,10 @@ var displayArea = document.getElementById("contentarea");
 var startButton = document.getElementById("start");
 var timeHtml = document.getElementById("timer");
 var timeRemaining = document.getElementById("timeremaining")
-
+var button0;
+var button1;
+var button2;
+var button3;
 
  //select a random question - picking from array length, allowing for an assortment of questions
 function randomQuestions(){
@@ -146,35 +150,46 @@ function randomQuestions(){
 
 //start button click starts the game and calls for the first question - this is displayed at the start of the game and the end of the game
 startButton.onclick = function(){
-    resetGame();
-    randomQuestions();
-    displayArea.innerHTML = "";
-    displayQuestion()
-    console.log(numberOfQuestions)
+    if (questionsAndAnswers.length < numberOfQuestions) {
+        displayArea.InnerHTML = "I'm all out of questions - come back later and I might have more."
+    }
+    else {
+        resetGame();
+        randomQuestions();
+        displayArea.innerHTML = "";
+        displayQuestion()
+        console.log(numberOfQuestions)
+    }
 }
+
 
 //start button click starts the game and calls for the first question - this is displayed at the start of the game and the end of the game
 
 
 //writing questions to html - currently testing that it can display for 6 seconds.
 function displayQuestion(){
-    var x = questionsRight + questionsWrong;
+    x = questionsRight + questionsWrong;
     var questionPush = questiondiv + questionsToAsk[x].question + closediv + answerdiv;
     console.log(questionPush)
     var answerPush ="";
     for (let i = 0; i < questionsToAsk[x].answers.length; i++) {
-        answerPush = answerPush + `<button id=`+i+`>` + questionsToAsk[x].answers[i];
+        answerPush = answerPush + `<button id=button`+i+`>` + questionsToAsk[x].answers[i];
         }
     console.log(answerPush)
     displayArea.innerHTML = questionPush + answerPush;
     var answerArea = document.getElementById("answerdiv");
-    timer()
+    button0 = document.getElementById("button0");
+    button1 = document.getElementById("button1");
+    button2 = document.getElementById("button2");
+    button3 = document.getElementById("button3");
+    timer();
+    buttonsActive();
 }
 
 
 //countdown timer reset and call timer - pulled from https://github.com/tylerblakeman/Playing-With-Timers - my collaboration with Zach Hassler for this project - I struggled with timers and worked through this with him
 function timer(){
-    questionTime = 5;
+    questionTime = 30;
     timerInterval = setInterval(countdown, 1000)
     countdown()
     }
@@ -195,12 +210,16 @@ function countdown() {
 
 //check answer function
 function checkAnswer(){
-    if (userSelection = questionsToAsk[x].correctAnswer){
+    if (userSelection == questionsToAsk[x].correctAnswer){
         questionsRight++;
-        endOfGame()
+        console.log("YAYAYAYYAYAY!");
+        displayArea.innerHTML = "YayyayyayyayyyyY!";
+        endOfGame();
     }
     else {
         questionsWrong++
+        console.log("booooo!")
+        displayArea.innerHTML = "BooooooooO!"
         endOfGame()
     }
 }
@@ -210,13 +229,21 @@ function endOfGame(){
     if (numberOfQuestions == questionsRight + questionsWrong) {
         console.log("End of Game!");
         displayArea.innerHTML = questiondiv + "would you like to play again?" + closediv + `<button id="start2">Start Game</button>`;
-        var startButton2 = document.getElementById("start2")
+        var answerPercentage = ((questionsRight/numberOfQuestions)*100);
+        answerPercentage = answerPercentage.toFixed(2);
+        timeRemaining.innerHTML = "Your score is "+ answerPercentage + "%";
+        var startButton2 = document.getElementById("start2");
         startButton2.onclick = function(){
-            displayArea.innerHTML = "";
-            resetGame();
-            randomQuestions();
-            displayQuestion()
-            console.log(numberOfQuestions)
+            if (questionsAndAnswers.length < numberOfQuestions) {
+                displayArea.innerHTML = "I'm all out of questions - come back later and I might have more.";
+            }
+            else {
+                displayArea.innerHTML = "";
+                resetGame();
+                randomQuestions();
+                displayQuestion();
+                console.log(numberOfQuestions);
+            }
         }
         }
     else {
@@ -230,3 +257,27 @@ function resetGame(){
     questionsWrong = 0;
 }
 
+//makes answer buttons activate and then after selecting an answer
+function buttonsActive() {
+    button0.onclick = function(){
+        clearInterval(timerInterval);
+        userSelection = questionsToAsk[x].answers[0];
+        console.log(userSelection);
+        checkAnswer();
+    }
+    button1.onclick = function(){
+        clearInterval(timerInterval);
+        userSelection = questionsToAsk[x].answers[1]
+        checkAnswer()
+    }
+    button2.onclick = function(){
+        clearInterval(timerInterval);
+        userSelection = questionsToAsk[x].answers[2]
+        checkAnswer()
+    }
+    button3.onclick = function(){
+        clearInterval(timerInterval);
+        userSelection = questionsToAsk[x].answers[3]
+        checkAnswer()
+    }
+}
