@@ -125,6 +125,7 @@ var questionsAndAnswers = [{
 
 var questiondiv = `<div class = "question">`;
 var closediv = "<\div>";
+var answerdiv = "<div id=answers>";
 var button = "<button>";
 
 //html variables
@@ -132,6 +133,7 @@ var displayArea = document.getElementById("contentarea");
 var startButton = document.getElementById("start");
 var timeHtml = document.getElementById("timer");
 var timeRemaining = document.getElementById("timeremaining")
+
 
  //select a random question - picking from array length, allowing for an assortment of questions
 function randomQuestions(){
@@ -157,14 +159,15 @@ startButton.onclick = function(){
 //writing questions to html - currently testing that it can display for 6 seconds.
 function displayQuestion(){
     var x = questionsRight + questionsWrong;
-    var questionPush = questiondiv + questionsToAsk[x].question + closediv;
+    var questionPush = questiondiv + questionsToAsk[x].question + closediv + answerdiv;
     console.log(questionPush)
     var answerPush ="";
     for (let i = 0; i < questionsToAsk[x].answers.length; i++) {
-        answerPush = answerPush + button + questionsToAsk[x].answers[i];
+        answerPush = answerPush + `<button id=`+i+`>` + questionsToAsk[x].answers[i];
         }
     console.log(answerPush)
-    displayArea.innerHTML = questionPush + answerPush; 
+    displayArea.innerHTML = questionPush + answerPush;
+    var answerArea = document.getElementById("answerdiv");
     timer()
 }
 
@@ -226,3 +229,4 @@ function resetGame(){
     questionsRight = 0;
     questionsWrong = 0;
 }
+
