@@ -9,119 +9,119 @@ var timerInterval;
 var timerInterval2;
 var questionsAndAnswers = [
 	{
-		question: "Question One?",
-		correctAnswer: "Correct Answer",
-		answers: ["Incorrect 1", "Incorrect 2", "Incorrect 3", "Correct Answer"]
+		question: "In Europe, coffee was known as what?",
+		correctAnswer: "Arabian Wine",
+		answers: ["Bitter Sludge", "The Devil's Tea", "Undrinkable Swill", "Arabian Wine"]
 	},
 	{
-		question: "Question Two?",
-		correctAnswer: "Correct Answer",
-		answers: ["Incorrect 1", "Incorrect 2", "Incorrect 3", "Correct Answer"]
+		question: "Castle beer is produced in what country?",
+		correctAnswer: "South Africa",
+		answers: ["South Africa", "Germany", "Sweden", "Norway"]
 	},
 	{
-		question: "Question Three?",
-		correctAnswer: "Correct Answer",
-		answers: ["Incorrect 1", "Incorrect 2", "Incorrect 3", "Correct Answer"]
+		question: "What country drinks the most beer?",
+		correctAnswer: "Germany",
+		answers: ["Mexico", "Italy", "Germany", "Australia"]
 	},
 	{
-		question: "Question Four?",
-		correctAnswer: "Correct Answer",
-		answers: ["Incorrect 1", "Incorrect 2", "Incorrect 3", "Correct Answer"]
+		question: "In second place behind California, what state makes the most wine?",
+		correctAnswer: "New York",
+		answers: ["Wisconsin", "New York", "Vermont", "Florida"]
 	},
 	{
-		question: "Question Five?",
-		correctAnswer: "Correct Answer",
-		answers: ["Incorrect 1", "Incorrect 2", "Incorrect 3", "Correct Answer"]
+		question: "In which nation did the word plonk, meaning wine, originally come from?",
+		correctAnswer: "Australia",
+		answers: ["Russia", "Italy", "Germany", "Australia"]
 	},
 	{
-		question: "Question Six?",
-		correctAnswer: "Correct Answer",
-		answers: ["Incorrect 1", "Incorrect 2", "Incorrect 3", "Correct Answer"]
+		question: "Kloster beer is brewed where?",
+		correctAnswer: "Thailand",
+		answers: ["Germany", "Thailand", "Austria", "Canada"]
 	},
 	{
-		question: "Question Seven?",
-		correctAnswer: "Correct Answer",
-		answers: ["Incorrect 1", "Incorrect 2", "Incorrect 3", "Correct Answer"]
+		question: "What is Romeo's Rouser?",
+		correctAnswer: "An ale",
+		answers: ["An ale", "A lager", "A whiskey", "A wine"]
 	},
 	{
-		question: "Question 8?",
-		correctAnswer: "Correct Answer",
-		answers: ["Incorrect 1", "Incorrect 2", "Incorrect 3", "Correct Answer"]
+		question: "Sukhindol wine is made in what country?",
+		correctAnswer: "Bulgaria",
+		answers: ["Norway", "Russia", "Bulgaria", "Finland"]
 	},
 	{
-		question: "Question 9?",
-		correctAnswer: "Correct Answer",
-		answers: ["Incorrect 1", "Incorrect 2", "Incorrect 3", "Correct Answer"]
+		question: "Where is Tiger beer brewed?",
+		correctAnswer: "Sinagpore",
+		answers: ["Greenwich", "Yokohama", "Brisbane", "Singapore"]
 	},
 	{
-		question: "Question 10?",
-		correctAnswer: "Correct Answer",
-		answers: ["Incorrect 1", "Incorrect 2", "Incorrect 3", "Correct Answer"]
+		question: "There are 33 words on the back of a bottle of what brand of beer",
+		correctAnswer: "Rolling Rock",
+		answers: ["New Castle", "Rolling Rock", "Coor's Light", "Pabst Blue Ribbon"]
 	},
 	{
-		question: "Question 11?",
-		correctAnswer: "Correct Answer",
-		answers: ["Incorrect 1", "Incorrect 2", "Incorrect 3", "Correct Answer"]
+		question: "Which country produces Bulls Blood wine?",
+		correctAnswer: "Hungary",
+		answers: ["Hungary", "China", "Spain", "Mexico"]
 	},
 	{
-		question: "Question 12?",
-		correctAnswer: "Correct Answer",
-		answers: ["Incorrect 1", "Incorrect 2", "Incorrect 3", "Correct Answer"]
+		question: "What give's root beer it's flavor?",
+		correctAnswer: "Sasparilla",
+		answers: ["Hops", "Sasparilla", "Yeast", "Sugar"]
 	},
 	{
-		question: "Question 13?",
-		correctAnswer: "Correct Answer",
-		answers: ["Incorrect 1", "Incorrect 2", "Incorrect 3", "Correct Answer"]
+		question: "There are how many gallons in a Puncheon wine barrel?",
+		correctAnswer: "83",
+		answers: ["50", "27", "83", "9"]
 	},
 	{
-		question: "Question 14?",
-		correctAnswer: "Correct Answer",
-		answers: ["Incorrect 1", "Incorrect 2", "Incorrect 3", "Correct Answer"]
+		question: "In the 13th century European children were baptized with what?",
+		correctAnswer: "Beer",
+		answers: ["Wine", "Beer", "Water", "Whiskey"]
 	},
 	{
-		question: "Question 15?",
-		correctAnswer: "Correct Answer",
-		answers: ["Incorrect 1", "Incorrect 2", "Incorrect 3", "Correct Answer"]
+		question: "In a Moscow mule, what spirit is mixed with ginger beer?",
+		correctAnswer: "Vodka",
+		answers: ["Whiskey", "Vodka", "Peppermint Liquore", "Beer"]
 	},
 	{
-		question: "Question 16?",
-		correctAnswer: "Correct Answer",
-		answers: ["Incorrect 1", "Incorrect 2", "Incorrect 3", "Correct Answer"]
+		question: "The Munich beer festival is held in what month?",
+		correctAnswer: "October",
+		answers: ["November", "October", "July", "March"]
 	},
 	{
-		question: "Question 17?",
-		correctAnswer: "Correct Answer",
-		answers: ["Incorrect 1", "Incorrect 2", "Incorrect 3", "Correct Answer"]
+		question: "The alien ET drank what brand of beer?",
+		correctAnswer: "Coors",
+		answers: ["Coors", "Bud", "High Life", "Miller Lite"]
 	},
 	{
-		question: "Question 18?",
-		correctAnswer: "Correct Answer",
-		answers: ["Incorrect 1", "Incorrect 2", "Incorrect 3", "Correct Answer"]
+		question: "Cobra beer is made in what country?",
+		correctAnswer: "India",
+		answers: ["China", "Vietnam", "India", "Japan"]
 	},
 	{
-		question: "Question 19?",
-		correctAnswer: "Correct Answer",
-		answers: ["Incorrect 1", "Incorrect 2", "Incorrect 3", "Correct Answer"]
+		question: "What state drinks the most beer?",
+		correctAnswer: "California",
+		answers: ["Texas", "Pennsylvania", "Wisconsin", "California"]
 	},
 	{
-		question: "Question 20?",
-		correctAnswer: "Correct Answer",
-		answers: ["Incorrect 1", "Incorrect 2", "Incorrect 3", "Correct Answer"]
+		question: "What was unusual about Co-op winter warmer ale's label?",
+		correctAnswer: "It was in Braille",
+		answers: ["Co-op mispelled their brand name", "It was a numbered release", "It was unlabeled", "It was in Braille"]
 	},
 	{
-		question: "Question 21?",
-		correctAnswer: "Correct Answer",
-		answers: ["Incorrect 1", "Incorrect 2", "Incorrect 3", "Correct Answer"]
+		question: "On January 24, 1935, what did drinkers see for the first time ever?",
+		correctAnswer: "Beer Cans",
+		answers: ["Brown Bottles", "Beer Cans", "High Life", "Non-Alcoholic Beers"]
 	},
 	{
-		question: "Question 22?",
-		correctAnswer: "Correct Answer",
-		answers: ["Incorrect 1", "Incorrect 2", "Incorrect 3", "Correct Answer"]
+		question: "The average Britain drinks about 14,571 of what over their life?",
+		correctAnswer: "Pints of Beer",
+		answers: ["Gallons of Beer", "CCs of Beer", "Pints of Beer", "Cartons of Milk"]
 	},
 	{
-		question: "Question 23?",
-		correctAnswer: "Correct Answer",
-		answers: ["Incorrect 1", "Incorrect 2", "Incorrect 3", "Correct Answer"]
+		question: "In what year was the Boston Beer company founded?",
+		correctAnswer: "1984",
+		answers: ["1943", "1852", "1776", "1984"]
 	}
 ];
 var x;
