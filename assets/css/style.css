@@ -15,6 +15,7 @@
     justify-content: center;
     align-content: center;
     align-items: center;
+    margin-left: 0px;
 }
 
 #start {
@@ -24,5 +25,10 @@
 #contentarea div {
     font-weight: bold;
     width: 100%;
-    margin: 20px;
+    margin: 10px 0px 0px 10px;
+}
+
+#answers {
+    display: flex;
+    justify-content: space-around;
 }
